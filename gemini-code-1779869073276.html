@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC — Guida Organizzata</title>
+    <style>
+        /* Variabili per uno stile minimalista */
+        :root {
+            --bg-color: #fdfdfd;
+            --text-main: #1c1c1c;
+            --text-muted: #666666;
+            --border-color: #e5e5e5;
+            --accent: #000000;
+        }
+
+        /* Reset e Tipografia base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header / Hero Section */
+        header {
+            padding: 6rem 0 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 3rem;
+        }
+
+        /* Immagini */
+        .img-wrapper {
+            width: 100%;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            border-radius: 8px; /* Angoli leggermente arrotondati */
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Effetto zoom leggero al passaggio del mouse (opzionale, molto elegante) */
+        .img-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        .hero-img {
+            max-height: 400px;
+        }
+
+        /* Navigazione */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(253, 253, 253, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Sezioni di Contenuto */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Card minimal per le categorie */
+        .info-card {
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .info-card:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .info-title {
+            font-weight: 500;
+            font-size: 1.2rem;
+            flex-basis: 30%;
+        }
+
+        .info-desc {
+            color: var(--text-muted);
+            flex-basis: 65%;
+        }
+
+        .info-desc ul {
+            list-style-type: disc;
+            margin-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive base */
+        @media (max-width: 600px) {
+            .info-card {
+                flex-direction: column;
+            }
+            .info-title {
+                margin-bottom: 0.5rem;
+            }
+            .info-desc {
+                max-width: 100%;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            .hero-img {
+                max-height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#quartieri">Quartieri</a></li>
+                <li><a href="#cultura">Cultura & Parchi</a></li>
+                <li><a href="#food">Food & Drink</a></li>
+                <li><a href="#info">Info</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>New York City</h1>
+            <p class="subtitle">La tua guida personale divisa per categorie.</p>
+            
+            <!-- IMMAGINE HERO PRINCIPALE -->
+            <div class="img-wrapper hero-img">
+                <!-- Sostituisci il link src con il nome della tua immagine, es: src="foto-copertina.jpg" -->
+                <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="Skyline di New York">
+            </div>
+        </header>
+
+        <section id="quartieri">
+            <h2>Quartieri da Esplorare</h2>
+            
+            <div class="info-card">
+                <div class="info-title">Midtown Manhattan</div>
+                <div class="info-desc">Il cuore pulsante e turistico. Qui trovi Times Square, l'Empire State Building, Rockefeller Center e la Grand Central Terminal. Ottimo per la prima giornata.</div>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-title">Lower Manhattan & FiDi</div>
+                <div class="info-desc">La zona storica e finanziaria. Da non perdere Wall Street, il Memoriale dell'11 Settembre, l'Oculus e la passeggiata a Battery Park per vedere la Statua della Libertà.</div>
+            </div>
+
+            <!-- IMMAGINE INTERNA ALLA SEZIONE -->
+            <div class="img-wrapper" style="margin-top: 2rem; margin-bottom: 0;">
+                <img src="https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=800&q=80" alt="Vista di Brooklyn">
+            </div>
+
+            <div class="info-card" style="margin-top: 2rem;">
+                <div class="info-title">Williamsburg (Brooklyn)</div>
+                <div class="info-desc">L'anima hipster di New York. Pieno di caffetterie indipendenti, negozi vintage, arte di strada e locali con vista sullo skyline di Manhattan dal Domino Park.</div>
+            </div>
+        </section>
+
+        <section id="cultura">
+            <h2>Cultura, Musei e Parchi</h2>
+            
+            <!-- IMMAGINE INTERNA ALLA SEZIONE -->
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?auto=format&fit=crop&w=800&q=80" alt="Central Park">
+            </div>
+
+            <div class="info-card">
+                <div class="info-title">I Grandi Musei</div>
+                <div class="info-desc">
+                    <ul>
+                        <li><strong>MoMA:</strong> Arte moderna e contemporanea.</li>
+                        <li><strong>The MET:</strong> Una collezione immensa, dall'Antico Egitto all'arte americana.</li>
+                        <li><strong>Guggenheim:</strong> Vale la visita anche solo per l'architettura di Frank Lloyd Wright.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-title">Spazi Verdi</div>
+                <div class="info-desc">
+                    Oltre all'immenso <strong>Central Park</strong> (noleggia una bici per girarlo meglio), cammina sulla <strong>High Line</strong>, un parco lineare costruito su un'ex ferrovia sopraelevata che attraversa Chelsea.
+                </div>
+            </div>
+        </section>
+
+        <section id="food">
+            <h2>Food & Drink</h2>
+            
+            <div class="info-card">
+                <div class="info-title">I Classici</div>
+                <div class="info-desc">Non puoi andartene senza aver provato un Pastrami sandwich (Katz's Delicatessen è il più famoso), un vero Bagel newyorkese con cream cheese e lox, e una slice di pizza (es. Joe's Pizza).</div>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-title">Mercati Gastronomici</div>
+                <div class="info-desc">Il <strong>Chelsea Market</strong> offre opzioni per tutti i gusti in una location industriale recuperata. Il <strong>Time Out Market</strong> a DUMBO (Brooklyn) abbina ottimo cibo a una vista spettacolare sul ponte.</div>
+            </div>
+        </section>
+
+        <section id="info">
+            <h2>Info Pratiche & Trasporti</h2>
+            
+            <div class="info-card">
+                <div class="info-title">Documenti</div>
+                <div class="info-desc">Ricordati l'ESTA (da fare online sul sito ufficiale) e un'assicurazione sanitaria con ottimi massimali.</div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-title">Metropolitana (MTA)</div>
+                <div class="info-desc">Il sistema nervoso della città. Usa Google Maps per orientarti sulle linee. Paga comodamente ai tornelli appoggiando la carta di credito o lo smartphone (sistema OMNY).</div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Progettato per il viaggio a NYC. Buon viaggio!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scorrimento fluido per la navigazione
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
